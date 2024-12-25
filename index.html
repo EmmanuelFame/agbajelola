@@ -65,16 +65,23 @@
     <div class="snowflake" style="left: 70%; animation-duration: 4.5s;">❄</div>
     <div class="snowflake" style="left: 90%; animation-duration: 6.5s;">❄</div>
 
-    <!-- Background Music -->
-    <audio id="my_audio" autoplay loop>
-        <source src="./Snowy O. McSnowerson and the Oh So Snowly Snowers - Feliz Navidad.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+   <!-- Background Music -->
+<audio id="background-music" loop>
+    <source src="./Snowy O. McSnowerson and the Oh So Snowly Snowers - Feliz Navidad.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<button id="play-button" style="margin-top: 20px; padding: 10px 20px; font-size: 1rem; cursor: pointer;">Play Music 🎵</button>
+
+<script>
+    const music = document.getElementById('background-music');
+    const playButton = document.getElementById('play-button');
+
+    playButton.addEventListener('click', () => {
+        music.play().catch(error => console.error('Playback failed:', error));
+    });
+</script>
     
-    <script>
-        window.onload = function() {
-        document.getElementById("my_audio").play();
-        }</script>
+   
 
 
        
