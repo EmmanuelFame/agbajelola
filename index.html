@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Holidays - Agbajelola's Family</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #00203FFF, #ADEFD1FF);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0.5em;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin: 0;
+            animation: slideUp 2s ease-in-out;
+        }
+
+        .snowflake {
+            position: absolute;
+            color: white;
+            font-size: 1.5em;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Merry Christmas, Agbajelola's Family!</h1>
+    <p>Wishing you love, joy, and peace this holiday season.</p>
+    <p>And a Happy New Year in advance!</p>
+
+    <!-- Snowflakes -->
+    <div class="snowflake" style="left: 10%; animation-duration: 6s;">❄</div>
+    <div class="snowflake" style="left: 30%; animation-duration: 5s;">❄</div>
+    <div class="snowflake" style="left: 50%; animation-duration: 7s;">❄</div>
+    <div class="snowflake" style="left: 70%; animation-duration: 4.5s;">❄</div>
+    <div class="snowflake" style="left: 90%; animation-duration: 6.5s;">❄</div>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="./Snowy O. McSnowerson and the Oh So Snowly Snowers - Feliz Navidad.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const snowflakes = document.querySelectorAll('.snowflake');
+        snowflakes.forEach(flake => {
+            flake.style.top = `${-100 - Math.random() * 100}px`;
+            flake.style.fontSize = `${Math.random() * 1.5 + 1}em`;
+            flake.style.animationDelay = `${Math.random() * 3}s`;
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti"></script>
+    <script>
+        function launchConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 90,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() * 0.5,
+                },
+                colors: ['#ff0000', '#00ff00', '#0000ff', '#ff00ff', '#ffff00'],
+            });
+        }
+    
+        // Example loop for confetti
+        setInterval(launchConfetti, 4000);
+    </script>
+</body>
+</html>
+
+    
